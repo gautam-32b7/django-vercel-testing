@@ -1,17 +1,18 @@
 {
   "builds": [
     {
-      "src": "manage.py",
+      "src": "django_vercel/wsgi.py",
       "use": "@vercel/python",
       "config": {
-        "maxLambdaSize": "50mb"
+        "maxLambdaSize": "50mb",
+        "runtime": "3.10.12"
       }
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "manage.py"
+      "dest": "django_vercel/wsgi.py"
     }
   ]
 }
